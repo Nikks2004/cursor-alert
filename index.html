@@ -12,15 +12,18 @@
                 event.clientX >= window.innerWidth || 
                 event.clientY >= window.innerHeight 
             ) {
+                document.body.style.backgroundImage = "none";
                 document.body.style.backgroundColor = "black";
                 document.querySelector("h1").textContent = "Я же говорил брат!";
                 
                 alert("Эй! Не надо по братски!");
 
                 setTimeout(() => {
-                    document.body.style.backgroundColor = "black";
+                    document.body.style.backgroundImage = "url('https://wallpaper.forfun.com/fetch/8f/8fb48e0d5927b771bc61b436f0b284bf.jpeg')";
+                    document.body.style.backgroundSize = "cover";
+                    document.body.style.backgroundPosition = "center";
                     document.querySelector("h1").textContent = "Не уходи брат!";
-                }, 500);
+                }, 400);
             }
         });
     </script>
@@ -32,9 +35,11 @@
             height: 100vh;
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: black;
+            background-image: url('https://wallpaper.forfun.com/fetch/8f/8fb48e0d5927b771bc61b436f0b284bf.jpeg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            transition: background-color 0.5s;
+            transition: background-color 0.5s, background-image 0.5s;
         }
     </style>
 </head>
