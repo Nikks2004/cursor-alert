@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Leave Alert</title>
+    <script>
+        document.addEventListener("mouseleave", function(event) {
+            if (
+                event.clientY <= 0 || 
+                event.clientX <= 0 || 
+                event.clientX >= window.innerWidth || 
+                event.clientY >= window.innerHeight 
+            ) {
+                document.body.style.backgroundColor = "black";
+                document.querySelector("h1").textContent = "Я же говорил брат!";
+                
+                alert("Эй! Не надо по братски!");
+
+                setTimeout(() => {
+                    document.body.style.backgroundColor = "black";
+                    document.querySelector("h1").textContent = "Не уходи брат!";
+                }, 500);
+            }
+        });
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            transition: background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Не уходи брат!</h1>
+</body>
+</html>
